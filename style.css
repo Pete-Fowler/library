@@ -53,4 +53,12 @@ body {
     border-radius: 100px;
 }
 
+#form {
+    height: 400px;
+    width: 300px;
+    position: absolute;
+    place-self: center;
+    border: 2px solid red;
+}
+
 
