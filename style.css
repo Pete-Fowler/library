@@ -87,12 +87,12 @@ body {
 
 label {
     justify-self: center;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: black;
 }
 
 input {
-    height: 1.5rem;
+    height: 1.8rem;
     border-radius: 5px;
     margin: 10px;
 }

@@ -21,13 +21,18 @@ function book (title, author, pages, read) {
 
 function addBook (title, author, pages, read) {
   library.push(new book (title, author, pages, read));
+  displayBooks();
 }
 
 addBook('The Hobbit', 'J.R. Tolkein', 295, true); // for initial display during design
 
+// works after save button is clicked on form, but then keeps going creating
+// undefined values clearing library display
+
 function displayBooks() {
   
- 
+ document.querySelectorAll('.book').forEach(e => e.remove());
+
   for(let i = 0; i < library.length; i++) {
     
     // create book element
@@ -55,8 +60,6 @@ function displayBooks() {
   }
 }
 
-displayBooks(); // for initial display during design
-
 // when #new-book button is clicked
 // it will bring up a form for book input
 // then add to library with addBook()
@@ -76,6 +79,7 @@ function newBook () {
   const title = document.createElement('input');
   title.id = 'title';
   title.setAttribute('type', 'text');
+  title.setAttribute('name', 'title');
   form.appendChild(titleLabel);
   form.appendChild(title);
 
@@ -86,6 +90,7 @@ function newBook () {
   const author = document.createElement('input');
   author.id = 'author';
   author.setAttribute('type', 'text');
+  author.setAttribute('name', 'author');
   form.appendChild(authorLabel);
   form.appendChild(author);
 
@@ -96,6 +101,7 @@ function newBook () {
   const pages = document.createElement('input');
   pages.id = 'pages';
   pages.setAttribute('type', 'number');
+  pages.setAttribute('name', 'pages');
   form.appendChild(pagesLabel);
   form.appendChild(pages);
 
@@ -106,6 +112,7 @@ function newBook () {
   const read = document.createElement('input');
   read.id = 'read';
   read.setAttribute('type', 'checkbox');
+  read.setAttribute('name', 'read');
   form.appendChild(readLabel);
   form.appendChild(read);
 
@@ -117,19 +124,21 @@ function newBook () {
   save.id = 'save-button';
   save.textContent = 'Save';
   save.className = 'new-button';
+  save.addEventListener('click', () => {addBook(title.value, author.value, pages.value, read.value)});
 
   const cancel = document.createElement('button');
   cancel.id = 'cancel-button';
   cancel.textContent = 'Cancel';
   cancel.className = 'new-button';
+  cancel.addEventListener('click', displayBooks);
 
+  // append!
   wrapper.appendChild(save);
   wrapper.appendChild(cancel);
   form.appendChild(wrapper);
-
-  // append
   body.appendChild(panel);
   panel.appendChild(form);
+
 }
 
 
