@@ -24,7 +24,7 @@ function addBook (title, author, pages, read) {
   displayBooks();
 }
 
-addBook('The Hobbit', 'J.R. Tolkein', 295, true); // for initial display during design
+addBook('The Hobbit', 'J.R. Tolkein', 295, 'Yes'); // for initial display during design
 
 // works after save button is clicked on form, but then keeps going creating
 // undefined values clearing library display
@@ -110,6 +110,7 @@ function newBook () {
   read.id = 'read';
   read.setAttribute('type', 'checkbox');
   read.setAttribute('name', 'read');
+  read.setAttribute('value', 'No');
   form.appendChild(readLabel);
   form.appendChild(read);
 
@@ -122,7 +123,8 @@ function newBook () {
   save.textContent = 'Save';
   save.className = 'new-button';
   save.setAttribute('type', 'button');
-  save.addEventListener('click', () => {addBook(title.value, author.value, pages.value, read.value)});
+  save.addEventListener('click', () => {addBook(title.value, author.value, 
+    pages.value, isRead(read.value))});
 
   const cancel = document.createElement('button');
   cancel.id = 'cancel-button';
@@ -140,4 +142,12 @@ function newBook () {
 
 }
 
+// changes checkbox value into yes/no
+function isRead (val) {
+  if (val === 'on') {
+    return 'Yes';
+  } else {
+    return 'No';
+  }
+}
 
