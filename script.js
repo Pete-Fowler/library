@@ -69,23 +69,25 @@ function newBook () {
   const form = document.createElement('form');
   form.id = 'form';
 
-  // title input
+  // add title input
   const titleLabel = document.createElement('label');
   titleLabel.setAttribute('for', 'title');
   titleLabel.textContent = 'Title:';
   const title = document.createElement('input');
   title.id = 'title';
-  titleLabel.appendChild(title);
+  title.setAttribute('type', 'text');
   form.appendChild(titleLabel);
+  form.appendChild(title);
 
   // Author input
   const authorLabel = document.createElement('label');
   authorLabel.setAttribute('for', 'author');
   authorLabel.textContent = 'Author:';
   const author = document.createElement('input');
-  title.id = 'author';
-  titleLabel.appendChild(author);
+  author.id = 'author';
+  author.setAttribute('type', 'text');
   form.appendChild(authorLabel);
+  form.appendChild(author);
 
   // Pages input
   const pagesLabel = document.createElement('label');
@@ -93,8 +95,37 @@ function newBook () {
   pagesLabel.textContent = 'Pages:';
   const pages = document.createElement('input');
   pages.id = 'pages';
-  pagesLabel.appendChild(pages);
+  pages.setAttribute('type', 'number');
   form.appendChild(pagesLabel);
+  form.appendChild(pages);
+
+  // Pages input
+  const readLabel = document.createElement('label');
+  readLabel.setAttribute('for', 'read');
+  readLabel.textContent = 'Read?';
+  const read = document.createElement('input');
+  read.id = 'read';
+  read.setAttribute('type', 'checkbox');
+  form.appendChild(readLabel);
+  form.appendChild(read);
+
+  // Save & Cancel buttons
+  const wrapper = document.createElement('div');
+  wrapper.id = 'button-wrapper';
+  
+  const save = document.createElement('button');
+  save.id = 'save-button';
+  save.textContent = 'Save';
+  save.className = 'new-button';
+
+  const cancel = document.createElement('button');
+  cancel.id = 'cancel-button';
+  cancel.textContent = 'cancel';
+  cancel.className = 'new-button';
+
+  wrapper.appendChild(save);
+  wrapper.appendChild(cancel);
+  form.appendChild(wrapper);
 
   // append
   body.appendChild(panel);
