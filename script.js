@@ -26,8 +26,6 @@ function addBook (title, author, pages, read) {
 
 addBook('The Hobbit', 'J.R. Tolkein', 295, 'Yes'); // for initial display during design
 
-// works after save button is clicked on form, but then keeps going creating
-// undefined values clearing library display
 
 function displayBooks() {
 
@@ -50,11 +48,19 @@ document.querySelectorAll('.book').forEach(e => e.remove());
     let p4 = document.createElement('p');
     p4.textContent = `Read yet? ${library[i].read}`;
     
-    // append paragraphs onto book element
+    // remove button
+    const remove = document.createElement('button');
+    remove.id = 'remove';
+    remove.setAttribute('type', 'button');
+    remove.textContent = 'Remove';
+
+
+    // append onto book element
     book.appendChild(p1);                 
     book.appendChild(p2);
     book.appendChild(p3);
     book.appendChild(p4);
+    book.appendChild(remove);
     
     // insert book card before new book button
     main.insertBefore(book, newBookButton);
