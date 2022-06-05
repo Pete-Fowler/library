@@ -3,6 +3,7 @@
 let library = [];
 
 // DOM elements and event listeners
+const body = document.querySelector('body');
 const main = document.querySelector('#main');
 const newBookButton = document.querySelector('#new-book');
 newBookButton.addEventListener('click', newBook);
@@ -62,9 +63,26 @@ displayBooks(); // for initial display during design
 // then call displayBooks()
 
 function newBook () {
-  const form = document.createElement('div');
-  form.id = form;
-  main.appendChild(form);
+  const panel = document.createElement('div');
+  panel.id = 'panel';
+
+  const form = document.createElement('form');
+  form.id = 'form';
+
+  // title input
+  const titleLabel = document.createElement('label');
+  titleLabel.setAttribute('style', 'for = title');
+  titleLabel.textContent = 'Title:';
+  const title = document.createElement('input');
+  title.id = 'title';
+  titleLabel.appendChild(title);
+  form.appendChild(titleLabel);
+
+    
+
+  // append!
+  body.appendChild(panel);
+  panel.appendChild(form);
 }
 
 
