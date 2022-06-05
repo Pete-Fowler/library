@@ -94,7 +94,7 @@ function newBook () {
   const pages = document.createElement('input');
   pages.id = 'pages';
   pagesLabel.appendChild(pages);
-  form.appendChild(titleLabel);
+  form.appendChild(pagesLabel);
 
   // append
   body.appendChild(panel);
