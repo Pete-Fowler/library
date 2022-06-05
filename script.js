@@ -13,7 +13,7 @@ function book (title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
-  this.read = false;
+  this.read = read;
   this.info = function () {
     return `Title: ${this.title} Author: ${this.author} Pages: ${this.pages} Read yet? ${this.read}`;
   }
@@ -30,8 +30,9 @@ addBook('The Hobbit', 'J.R. Tolkein', 295, true); // for initial display during 
 // undefined values clearing library display
 
 function displayBooks() {
-  
- document.querySelectorAll('.book').forEach(e => e.remove());
+
+document.querySelectorAll('#panel').forEach(e => e.remove());
+document.querySelectorAll('.book').forEach(e => e.remove());
 
   for(let i = 0; i < library.length; i++) {
     
@@ -60,11 +61,7 @@ function displayBooks() {
   }
 }
 
-// when #new-book button is clicked
-// it will bring up a form for book input
-// then add to library with addBook()
-// then call displayBooks()
-
+// adds form to DOM and then new book to library from inputs
 function newBook () {
   const panel = document.createElement('div');
   panel.id = 'panel';
@@ -105,7 +102,7 @@ function newBook () {
   form.appendChild(pagesLabel);
   form.appendChild(pages);
 
-  // Pages input
+  // Read input
   const readLabel = document.createElement('label');
   readLabel.setAttribute('for', 'read');
   readLabel.textContent = 'Read?';
@@ -124,12 +121,14 @@ function newBook () {
   save.id = 'save-button';
   save.textContent = 'Save';
   save.className = 'new-button';
+  save.setAttribute('type', 'button');
   save.addEventListener('click', () => {addBook(title.value, author.value, pages.value, read.value)});
 
   const cancel = document.createElement('button');
   cancel.id = 'cancel-button';
   cancel.textContent = 'Cancel';
   cancel.className = 'new-button';
+  cancel.setAttribute('type', 'button');
   cancel.addEventListener('click', displayBooks);
 
   // append!
