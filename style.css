@@ -55,7 +55,7 @@ body {
 
 #panel {
     background-color: black;
-    opacity: .5;
+    opacity: .7;
     position: fixed;
     height: 100vh;
     width: 100vw;
@@ -64,16 +64,36 @@ body {
 }
 
 #form {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    background: white;
     height: 400px;
+    color: black;
     width: 300px;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     margin-top: -200px;
     margin-left: -150px;
-    border: 2px solid red;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
     z-index: 2;
    
+}
+
+label {
+    font-size: 1.5rem;
+    color: black;
+}
+
+input {
+    height: 1.5rem;
+    border-radius: 5px;
+    margin: 10px;
 }
 
 

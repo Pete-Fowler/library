@@ -71,16 +71,32 @@ function newBook () {
 
   // title input
   const titleLabel = document.createElement('label');
-  titleLabel.setAttribute('style', 'for = title');
+  titleLabel.setAttribute('for', 'title');
   titleLabel.textContent = 'Title:';
   const title = document.createElement('input');
   title.id = 'title';
   titleLabel.appendChild(title);
   form.appendChild(titleLabel);
 
-    
+  // Author input
+  const authorLabel = document.createElement('label');
+  authorLabel.setAttribute('for', 'author');
+  authorLabel.textContent = 'Author:';
+  const author = document.createElement('input');
+  title.id = 'author';
+  titleLabel.appendChild(author);
+  form.appendChild(authorLabel);
 
-  // append!
+  // Pages input
+  const pagesLabel = document.createElement('label');
+  pagesLabel.setAttribute('for', 'pages');
+  pagesLabel.textContent = 'Pages:';
+  const pages = document.createElement('input');
+  pages.id = 'pages';
+  pagesLabel.appendChild(pages);
+  form.appendChild(titleLabel);
+
+  // append
   body.appendChild(panel);
   panel.appendChild(form);
 }
