@@ -120,7 +120,7 @@ function newBook () {
 
   const cancel = document.createElement('button');
   cancel.id = 'cancel-button';
-  cancel.textContent = 'cancel';
+  cancel.textContent = 'Cancel';
   cancel.className = 'new-button';
 
   wrapper.appendChild(save);
