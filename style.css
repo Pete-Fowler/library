@@ -1,5 +1,12 @@
+:root {
+    --main-color: #1F3044;
+    --main2-color: #646C79;
+    --accent-color: #FB9039;
+}
+
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -9,13 +16,14 @@ body {
 #header {
     width: 100%;
     display: flex;
+    background-color: var(--main2-color);
     justify-content: center;
 }
 
 #main {
     display: flex;
     flex-wrap: wrap;
-    background-color: lightgray;
+    background-color: var(--main-color);
     width: 100%;
     height: 90%;
 }
@@ -26,12 +34,13 @@ body {
     align-items: center;
     width: 250px;
     height: 300px;
-    background-color: white;
+    background-color: var(--main2-color);
     padding: 15px;
     border: 1px solid grey;
     margin: 20px;
     box-shadow: 2px 2px 4px 3px slategray;
     border-radius: 20px;
+    border-left: 20px solid var(--accent-color);
 }
 
 .book p {
@@ -44,7 +53,8 @@ body {
 }
 
 #new-book {
-    
+    color: var(--main-color);
+    background-color: var(--accent-color);
     font-size: 4rem;
     font-weight: 999;
     width: 100px;
@@ -55,12 +65,10 @@ body {
 
 #panel {
     background-color: black;
-    opacity: .7;
+    opacity: .5;
     position: fixed;
     height: 100vh;
     width: 100vw;
-    z-index: 1;
-    
 }
 
 #form {
@@ -68,10 +76,10 @@ body {
     display: grid;
     grid: repeat(5, 1fr) / 1fr 1fr;
     align-items: center;
-    background: white;
+    color: white;
+    background: var(--main2-color);
     height: 500px;
     width: 400px;
-    color: black;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -80,7 +88,6 @@ body {
     padding: 20px;
     border: 2px solid black;
     border-radius: 10px;
-    z-index: 2;
     font-size: 1.5rem;
     font-weight: 800;
 }
@@ -88,11 +95,14 @@ body {
 label {
     justify-self: center;
     font-size: 1.8rem;
-    color: black;
+    color: white;
 }
 
 input {
+    font-size: 1.5rem;
+    color: black;
     height: 1.8rem;
+    width: 90%;
     border-radius: 5px;
     margin: 10px;
 }
