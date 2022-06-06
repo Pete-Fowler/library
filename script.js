@@ -32,7 +32,17 @@ function removeBook(book) {
   library.splice(book, 1);
 }
 
+// change read status, change button class for display
 function toggleRead(book) {
+  let button = document.querySelector(`.book[data-n='${book} #toggle-button`);
+  if(library[book].read === 'Read') {
+    library[book].read === 'Not read';
+    button.className = 'not-read';
+  } else {
+    library[book].read == 'Read';
+    button.className = 'read';
+  }
+  
   
 }
 
