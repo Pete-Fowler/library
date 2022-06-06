@@ -87,6 +87,7 @@ document.querySelectorAll('.book').forEach(e => e.remove());
     book.appendChild(p2);
     book.appendChild(p3);
     book.appendChild(p4);
+    book.appendChild(toggle);
     book.appendChild(remove);
     
     // insert book card before new book button
