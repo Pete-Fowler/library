@@ -75,6 +75,7 @@ body {
     position: fixed;
     height: 100vh;
     width: 100vw;
+    z-index: 1;
 }
 
 #form {
@@ -86,6 +87,7 @@ body {
     background: var(--main2-color);
     height: 500px;
     width: 400px;
+    opacity: 1;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -96,6 +98,7 @@ body {
     border-radius: 10px;
     font-size: 1.5rem;
     font-weight: 800;
+    z-index: 2;
 }
 
 label {
