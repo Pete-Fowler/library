@@ -26,6 +26,11 @@ function addBook (title, author, pages, read) {
 
 addBook('The Hobbit', 'J.R. Tolkein', 295, 'Yes'); // for initial display during design
 
+function removeBook(book) {
+  let a = document.querySelector(`.book[data-n='${book}']`);
+  a.remove();
+  library.splice(book, 1);
+}
 
 function displayBooks() {
 
@@ -37,6 +42,7 @@ document.querySelectorAll('.book').forEach(e => e.remove());
     // create book element
     let book = document.createElement('div'); 
     book.className = 'book';
+    book.setAttribute('data-n', `${i}`);
     
     // add content into book card
     let p1 = document.createElement('p');             
@@ -46,14 +52,14 @@ document.querySelectorAll('.book').forEach(e => e.remove());
     let p3 = document.createElement('p');
     p3.textContent = `Pages: ${library[i].pages}`;
     let p4 = document.createElement('p');
-    p4.textContent = `Read yet? ${library[i].read}`;
+    p4.textContent = `Read: ${library[i].read}`;
     
     // remove button
     const remove = document.createElement('button');
     remove.id = 'remove';
     remove.setAttribute('type', 'button');
     remove.textContent = 'Remove';
-
+    remove.addEventListener('click', () => {removeBook(i)});
 
     // append onto book element
     book.appendChild(p1);                 
