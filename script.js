@@ -122,7 +122,7 @@ function newBook () {
   read.id = 'read';
   read.setAttribute('type', 'checkbox');
   read.setAttribute('name', 'read');
-  read.setAttribute('value', 'No');
+  // read.setAttribute('value', 'No');
   form.appendChild(readLabel);
   form.appendChild(read);
 
@@ -136,7 +136,7 @@ function newBook () {
   save.className = 'new-button';
   save.setAttribute('type', 'button');
   save.addEventListener('click', () => {addBook(title.value, author.value, 
-    pages.value, isRead(read.value))});
+    pages.value, isRead(read.checked))});
 
   const cancel = document.createElement('button');
   cancel.id = 'cancel-button';
@@ -156,10 +156,10 @@ function newBook () {
 
 // changes checkbox value into yes/no
 function isRead (val) {
-  if (val === 'on') {
-    return 'Yes';
+  if (val === true) {
+    return 'Read';
   } else {
-    return 'No';
+    return 'Not read';
   }
 }
 
