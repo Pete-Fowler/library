@@ -32,6 +32,10 @@ function removeBook(book) {
   library.splice(book, 1);
 }
 
+function toggleRead(book) {
+  
+}
+
 function displayBooks() {
 
 document.querySelectorAll('#panel').forEach(e => e.remove());
@@ -60,6 +64,13 @@ document.querySelectorAll('.book').forEach(e => e.remove());
     remove.setAttribute('type', 'button');
     remove.textContent = 'Remove';
     remove.addEventListener('click', () => {removeBook(i)});
+
+    // toggle read button
+    const toggle = document.createElement('button');
+    toggle.id = 'toggle-button';
+    toggle.setAttribute = ('type', 'button');
+    toggle.textContent = `${library[i].read}`;
+    toggle.addEventListener('click', toggleRead(i));
 
     // append onto book element
     book.appendChild(p1);                 
