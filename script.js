@@ -24,7 +24,7 @@ function addBook (title, author, pages, read) {
   displayBooks();
 }
 
-addBook('The Hobbit', 'J.R. Tolkein', 295, 'Yes'); // for initial display during design
+addBook('The Hobbit', 'J.R. Tolkein', 295, 'Read'); // for initial display during design
 
 function removeBook(book) {
   let a = document.querySelector(`.book[data-n='${book}']`);
@@ -34,16 +34,15 @@ function removeBook(book) {
 
 // change read status, change button class for display
 function toggleRead(book) {
-  let button = document.querySelector(`.book[data-n='${book} #toggle-button`);
+  let button = document.querySelector(`.book[data-n='${book}'] #toggle-button`);
   if(library[book].read === 'Read') {
-    library[book].read === 'Not read';
+    library[book].read = 'Not read';
     button.className = 'not-read';
   } else {
-    library[book].read == 'Read';
+    library[book].read = 'Read';
     button.className = 'read';
   }
-  
-  
+  displayBooks();
 }
 
 function displayBooks() {
@@ -80,7 +79,7 @@ document.querySelectorAll('.book').forEach(e => e.remove());
     toggle.id = 'toggle-button';
     toggle.setAttribute = ('type', 'button');
     toggle.textContent = `${library[i].read}`;
-    toggle.addEventListener('click', toggleRead(i));
+    toggle.addEventListener('click', () => {toggleRead(i)});
 
     // append onto book element
     book.appendChild(p1);                 
