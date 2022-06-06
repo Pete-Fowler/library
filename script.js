@@ -37,12 +37,14 @@ function toggleRead(book) {
   let button = document.querySelector(`.book[data-n='${book}'] #toggle-button`);
   if(library[book].read === 'Read') {
     library[book].read = 'Not read';
-    button.className = 'not-read';
+    button.textContent = 'Not read';
+    button.classList.toggle('read');
   } else {
     library[book].read = 'Read';
-    button.className = 'read';
+    button.textContent = 'Read';
+    button.classList.toggle('read');
+
   }
-  displayBooks();
 }
 
 function displayBooks() {
@@ -64,8 +66,6 @@ document.querySelectorAll('.book').forEach(e => e.remove());
     p2.textContent = `Author: ${library[i].author}`;
     let p3 = document.createElement('p');
     p3.textContent = `Pages: ${library[i].pages}`;
-    let p4 = document.createElement('p');
-    p4.textContent = `Read: ${library[i].read}`;
     
     // remove button
     const remove = document.createElement('button');
@@ -79,13 +79,17 @@ document.querySelectorAll('.book').forEach(e => e.remove());
     toggle.id = 'toggle-button';
     toggle.setAttribute = ('type', 'button');
     toggle.textContent = `${library[i].read}`;
+    if (library[i].read === 'Read') {
+      toggle.className = 'read';
+    } else {
+      toggle.className = 'not-read';
+    }
     toggle.addEventListener('click', () => {toggleRead(i)});
 
     // append onto book element
     book.appendChild(p1);                 
     book.appendChild(p2);
     book.appendChild(p3);
-    book.appendChild(p4);
     book.appendChild(toggle);
     book.appendChild(remove);
     
@@ -143,7 +147,6 @@ function newBook () {
   read.id = 'read';
   read.setAttribute('type', 'checkbox');
   read.setAttribute('name', 'read');
-  // read.setAttribute('value', 'No');
   form.appendChild(readLabel);
   form.appendChild(read);
 

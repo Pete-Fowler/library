@@ -49,15 +49,25 @@ body {
 }
 
 #toggle-button {
-
+    font-size: 1.5rem;
+    height: 60px;
+    color: white;
+    background-color: red;
+    font-weight: 800;
+    border-radius: 10px;
+    align-self: stretch;
+    transition: background-color .6s ease-in-out;
 }
 
-.read {
-
-}
-
-.not-read {
-    
+#toggle-button.read {
+    font-size: 1.5rem;
+    height: 60px;
+    color: white;
+    font-weight: 800;
+    background-color: rgb(77, 192, 77);
+    border-radius: 10px;
+    align-self: stretch;
+    transition: background-color .6s ease-in-out;
 }
 
 #remove {
