@@ -59,6 +59,10 @@ body {
     transition: background-color .6s ease-in-out;
 }
 
+#toggle-button:hover {
+    opacity: .7;
+}
+
 #toggle-button.read {
     font-size: 1.5rem;
     height: 60px;
@@ -80,6 +84,10 @@ body {
     align-self: stretch;
 }
 
+#remove:hover {
+    opacity: .7;
+}
+
 #new-book {
     color: var(--main-color);
     background-color: var(--accent-color);
@@ -89,6 +97,10 @@ body {
     height: 100px;
     margin: 75px;
     border-radius: 100px;
+}
+
+#new-book:hover {
+    opacity: .7;
 }
 
 #panel {
