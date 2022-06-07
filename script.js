@@ -43,13 +43,13 @@ function removeBook(book) {
   library.splice(book, 1);
 }
 
-function removeModal() {
-  document.querySelectorAll('#panel').forEach(e => e.remove());
+function removeModal(e) {
+  document.querySelector('#panel').forEach(e => e.remove());
 }
 
 function displayBooks() {
 
-document.querySelectorAll('#panel').forEach(e => e.remove());
+document.querySelectorAll('#panel').remove;
 document.querySelectorAll('.book').forEach(e => e.remove());
 
   for(let i = 0; i < library.length; i++) {
