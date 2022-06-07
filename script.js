@@ -16,6 +16,20 @@ function book (title, author, pages, read) {
   this.read = read;
   }
 
+// toggle book read status and change read button styling
+book.prototype.toggleRead = function () {
+  let button = document.querySelector(`.book[data-n='${library.indexOf(this)}'] #toggle-button`);
+  if(this.read === 'Read') {
+    this.read = 'Not read';
+    button.textContent = 'Not read';
+    button.classList.toggle('read');
+  } else {
+    this.read = 'Read';
+    button.textContent = 'Read';
+    button.classList.toggle('read');
+  }
+}
+
 function addBook (title, author, pages, read) {
   library.push(new book (title, author, pages, read));
   displayBooks();
@@ -27,21 +41,6 @@ function removeBook(book) {
   let a = document.querySelector(`.book[data-n='${book}']`);
   a.remove();
   library.splice(book, 1);
-}
-
-// change read status, change button class for display
-function toggleRead(book) {
-  let button = document.querySelector(`.book[data-n='${book}'] #toggle-button`);
-  if(library[book].read === 'Read') {
-    library[book].read = 'Not read';
-    button.textContent = 'Not read';
-    button.classList.toggle('read');
-  } else {
-    library[book].read = 'Read';
-    button.textContent = 'Read';
-    button.classList.toggle('read');
-
-  }
 }
 
 function displayBooks() {
@@ -81,7 +80,7 @@ document.querySelectorAll('.book').forEach(e => e.remove());
     } else {
       toggle.className = 'not-read';
     }
-    toggle.addEventListener('click', () => {toggleRead(i)});
+    toggle.addEventListener('click', () => {library[i].toggleRead()});
 
     // append onto book element
     book.appendChild(p1);                 
