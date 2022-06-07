@@ -14,10 +14,7 @@ function book (title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
-  this.info = function () {
-    return `Title: ${this.title} Author: ${this.author} Pages: ${this.pages} Read yet? ${this.read}`;
   }
-}
 
 function addBook (title, author, pages, read) {
   library.push(new book (title, author, pages, read));
