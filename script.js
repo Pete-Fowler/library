@@ -39,8 +39,8 @@ addBook('The Hobbit', 'J.R. Tolkein', 295, 'Read'); // for initial display
 
 function removeBook(book) {
   let a = document.querySelector(`.book[data-n='${book}']`);
-  a.remove();
   library.splice(book, 1);
+  displayBooks();
 }
 
 function removeModal(e) {
