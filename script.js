@@ -43,6 +43,10 @@ function removeBook(book) {
   library.splice(book, 1);
 }
 
+function removeModal() {
+  document.querySelectorAll('#panel').forEach(e => e.remove());
+}
+
 function displayBooks() {
 
 document.querySelectorAll('#panel').forEach(e => e.remove());
@@ -98,6 +102,12 @@ document.querySelectorAll('.book').forEach(e => e.remove());
 function newBook () {
   const panel = document.createElement('div');
   panel.id = 'panel';
+  panel.addEventListener('click', removeModal);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      removeModal();
+    }
+  });
 
   const form = document.createElement('form');
   form.id = 'form';
