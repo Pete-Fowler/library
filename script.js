@@ -167,7 +167,7 @@ function newBook () {
   cancel.textContent = 'Cancel';
   cancel.className = 'new-button';
   cancel.setAttribute('type', 'button');
-  cancel.addEventListener('click', displayBooks);
+  cancel.addEventListener('click', panel.remove());
 
   // append!
   wrapper.appendChild(save);
