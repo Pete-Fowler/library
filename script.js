@@ -35,7 +35,7 @@ function addBook (title, author, pages, read) {
   displayBooks();
 }
 
-addBook('The Hobbit', 'J.R. Tolkein', 295, 'Read'); // for initial display during design
+addBook('The Hobbit', 'J.R. Tolkein', 295, 'Read'); // for initial display
 
 function removeBook(book) {
   let a = document.querySelector(`.book[data-n='${book}']`);
@@ -45,11 +45,12 @@ function removeBook(book) {
 
 function removeModal(e) {
   const panel = document.querySelector('#panel');
+  const isCancel = e.target.closest('#cancel-button');
   const isOutside = !e.target.closest('form');  
-  if(isOutside) {
-  panel.remove();
+    if(isOutside || isCancel) {
+    panel.remove();
+    }
   }
-}
 
 function displayBooks() {
 
