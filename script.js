@@ -135,17 +135,6 @@ function newBook () {
   form.appendChild(pagesLabel);
   form.appendChild(pages);
 
-  // Read input
-  const readLabel = document.createElement('label');
-  readLabel.setAttribute('for', 'read');
-  readLabel.textContent = 'Read?';
-  const read = document.createElement('input');
-  read.id = 'read';
-  read.setAttribute('type', 'checkbox');
-  read.setAttribute('name', 'read');
-  form.appendChild(readLabel);
-  form.appendChild(read);
-
   // Save & Cancel buttons
   const wrapper = document.createElement('div');
   wrapper.id = 'button-wrapper';

@@ -2,6 +2,7 @@
     --main-color: white;
     --main2-color: lightgray;
     --accent-color: #6498ff;
+    --accent2-color: black;
     box-sizing: border-box;
 }
 
@@ -97,15 +98,15 @@ body {
     height: 100px;
     margin: 75px;
     border-radius: 100px;
+    transition: transform .6s;
 }
 
 #new-book:hover {
-    opacity: .7;
+    transform: rotate(.25turn) scale(1.2);
 }
 
 #panel {
-    background-color: black;
-    opacity: .5;
+    background-color: rgba(0, 0, 0, .7);
     position: fixed;
     height: 100vh;
     width: 100vw;
@@ -117,11 +118,10 @@ body {
     display: grid;
     grid: repeat(5, 1fr) / 1fr 1fr;
     align-items: center;
-    color: white;
+    color: black;
     background: var(--main2-color);
     height: 500px;
     width: 400px;
-    opacity: 1;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -132,18 +132,15 @@ body {
     border-radius: 10px;
     font-size: 1.5rem;
     font-weight: 800;
-    z-index: 2;
 }
 
 label {
     justify-self: center;
     font-size: 1.8rem;
-    color: white;
 }
 
 input {
     font-size: 1.5rem;
-    color: black;
     height: 1.8rem;
     width: 90%;
     border-radius: 5px;
