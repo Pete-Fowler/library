@@ -1,13 +1,13 @@
 :root {
-    --main-color: #1F3044;
-    --main2-color: #646C79;
-    --accent-color: #FB9039;
+    --main-color: white;
+    --main2-color: lightgray;
+    --accent-color: #6498ff;
     box-sizing: border-box;
 }
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: white;
+    color: black;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -35,7 +35,7 @@ body {
     align-items: flex-start;
     width: 275px;
     height: 350px;
-    background-color: var(--main2-color);
+    background-color: var(--main-color);
     padding: 15px;
     border: 1px solid grey;
     margin: 20px;
@@ -51,7 +51,7 @@ body {
 #toggle-button {
     font-size: 1.5rem;
     height: 60px;
-    color: white;
+    color: black;
     background-color: red;
     font-weight: 800;
     border-radius: 10px;
@@ -66,7 +66,7 @@ body {
 #toggle-button.read {
     font-size: 1.5rem;
     height: 60px;
-    color: white;
+    color: black;
     font-weight: 800;
     background-color: rgb(77, 192, 77);
     border-radius: 10px;
@@ -77,9 +77,9 @@ body {
 #remove {
     font-size: 1.5rem;
     height: 60px;
-    color: white;
+    color: black;
     font-weight: 800;
-    background-color: var(--main-color);
+    background-color: var(--main2-color);
     border-radius: 10px;
     align-self: stretch;
 }
