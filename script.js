@@ -44,7 +44,7 @@ function removeBook(book) {
 }
 
 function removeModal(e) {
-  document.querySelector('#panel').forEach(e => e.remove());
+  document.querySelector('#panel').remove();
 }
 
 function displayBooks() {
