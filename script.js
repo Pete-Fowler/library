@@ -118,42 +118,41 @@ function newBook () {
   form.id = 'form';
 
   // add title input
-  const titleLabel = document.createElement('label');
-  titleLabel.setAttribute('for', 'title');
-  titleLabel.textContent = 'Title:';
+  
   const title = document.createElement('input');
   title.id = 'title';
   title.setAttribute('type', 'text');
   title.setAttribute('name', 'title');
-  form.appendChild(titleLabel);
+  title.setAttribute('required', '');
+  title.setAttribute('maxlength', '60');
+  title.setAttribute('placeholder', 'Title')
   form.appendChild(title);
 
   // Author input
-  const authorLabel = document.createElement('label');
-  authorLabel.setAttribute('for', 'author');
-  authorLabel.textContent = 'Author:';
   const author = document.createElement('input');
   author.id = 'author';
   author.setAttribute('type', 'text');
   author.setAttribute('name', 'author');
-  form.appendChild(authorLabel);
+  author.setAttribute('required', '');
+  author.setAttribute('maxlength', '40');
+  author.setAttribute('placeholder', 'Author')
   form.appendChild(author);
 
   // Pages input
-  const pagesLabel = document.createElement('label');
-  pagesLabel.setAttribute('for', 'pages');
-  pagesLabel.textContent = 'Pages:';
   const pages = document.createElement('input');
   pages.id = 'pages';
   pages.setAttribute('type', 'number');
   pages.setAttribute('name', 'pages');
-  form.appendChild(pagesLabel);
+  pages.setAttribute('required', '');
+  pages.setAttribute('min', '1');
+  pages.setAttribute('max', '99999');
+  pages.setAttribute('placeholder', 'Pages')
   form.appendChild(pages);
 
   // Read input
   const readLabel = document.createElement('label');
   readLabel.setAttribute('for', 'read');
-  readLabel.textContent = 'Read?:';
+  readLabel.textContent = 'Read?';
   const read = document.createElement('input');
   read.id = 'read';
   read.setAttribute('type', 'checkbox');
@@ -169,7 +168,7 @@ function newBook () {
   save.id = 'save-button';
   save.textContent = 'Save';
   save.className = 'new-button';
-  save.setAttribute('type', 'button');
+  save.setAttribute('type', 'submit');
   save.addEventListener('click', () => {addBook(title.value, author.value, 
     pages.value, isRead(read.checked))});
 
@@ -181,9 +180,8 @@ function newBook () {
   cancel.addEventListener('click', panel.remove());
 
   // append!
-  wrapper.appendChild(save);
-  wrapper.appendChild(cancel);
-  form.appendChild(wrapper);
+  form.appendChild(save);
+  form.appendChild(cancel);
   body.appendChild(panel);
   panel.appendChild(form);
 
