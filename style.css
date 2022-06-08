@@ -59,7 +59,7 @@ body {
     font-size: 1.5rem;
     margin: 5px 5px;
     overflow-wrap: break-word;
-    overflow: auto;
+    overflow: hidden;
 }
 
 #toggle-button {
