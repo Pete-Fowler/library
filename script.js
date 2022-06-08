@@ -118,7 +118,6 @@ function newBook () {
   form.id = 'form';
 
   // add title input
-  
   const title = document.createElement('input');
   title.id = 'title';
   title.setAttribute('type', 'text');
@@ -186,7 +185,7 @@ function newBook () {
   panel.appendChild(form);
 
 }
-
+ 
 // changes checkbox value into yes/no
 function isRead (val) {
   if (val === true) {
