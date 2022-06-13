@@ -8,27 +8,53 @@ const main = document.querySelector('#main');
 const newBookButton = document.querySelector('#new-book');
 newBookButton.addEventListener('click', newBook);
 
+// Below later changed into class syntax as a learning exercise
 // book constructor function
-function book (title, author, pages, read) {
+// function book (title, author, pages, read) {
+//   this.title = title;
+//   this.author = author;
+//   this.pages = pages;
+//   this.read = read;
+//   }
+
+// // toggle book read status and change read button styling
+// book.prototype.toggleRead = function () {
+//   let button = document.querySelector(`.book[data-n='${library.indexOf(this)}'] #toggle-button`);
+//   if(this.read === 'Read') {
+//     this.read = 'Not read';
+//     button.textContent = 'Not read';
+//     button.classList.toggle('read');
+//   } else {
+//     this.read = 'Read';
+//     button.textContent = 'Read';
+//     button.classList.toggle('read');
+//   }
+// }
+
+// The above later changed into class syntax as a learning exercise
+class book {
+  
+  constructor(title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.read = read;
   }
 
-// toggle book read status and change read button styling
-book.prototype.toggleRead = function () {
-  let button = document.querySelector(`.book[data-n='${library.indexOf(this)}'] #toggle-button`);
-  if(this.read === 'Read') {
-    this.read = 'Not read';
-    button.textContent = 'Not read';
-    button.classList.toggle('read');
-  } else {
-    this.read = 'Read';
-    button.textContent = 'Read';
-    button.classList.toggle('read');
+  toggleRead() {
+    let button = document.querySelector(`.book[data-n='${library.indexOf(this)}'] #toggle-button`);
+    if(this.read === 'Read') {
+      this.read = 'Not read';
+      button.textContent = 'Not read';
+      button.classList.toggle('read');
+    } else {
+      this.read = 'Read';
+      button.textContent = 'Read';
+      button.classList.toggle('read');
+    }
   }
-}
+
+  }
 
 function addBook (title, author, pages, read) {
   library.push(new book (title, author, pages, read));
@@ -178,7 +204,7 @@ function newBook () {
   cancel.setAttribute('type', 'button');
   cancel.addEventListener('click', panel.remove());
 
-  // append!
+  // append
   form.appendChild(save);
   form.appendChild(cancel);
   body.appendChild(panel);
