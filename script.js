@@ -202,9 +202,9 @@ function newBook() {
   save.textContent = "Save";
   save.className = "new-button";
   save.setAttribute("type", "submit");
-  save.addEventListener("click", () => {
-    addBook(title.value, author.value, pages.value, isRead(read.checked));
-  });
+  // save.addEventListener("click", () => {
+  //   addBook(title.value, author.value, pages.value, isRead(read.checked));
+  // });
 
   const cancel = document.createElement("button");
   cancel.id = "cancel-button";
@@ -218,4 +218,7 @@ function newBook() {
   form.appendChild(cancel);
   body.appendChild(panel);
   panel.appendChild(form);
+  form.addEventListener('submit', () => {
+    addBook(title.value, author.value, pages.value, isRead(read.checked));
+});
 }
