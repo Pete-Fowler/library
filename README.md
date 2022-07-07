@@ -1,3 +1,4 @@
+<a href='https://pete-fowler.github.io/library/'>Live page</a>
 
 In the course of this project, I learned there are easier ways to create a modal window. I did the new book modal entirely through javascript, but realized it seems easier to create the modal elements in html, and then use the button to toggle the visibility of the modal and background overlay.
 
